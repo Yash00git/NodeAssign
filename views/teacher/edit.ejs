@@ -1,0 +1,23 @@
+<%- include("../partials/navbar.ejs") %> 
+<a href="/teacher/viewall" class="btn btn-info" style="margin-top:5px;">Back</a>
+<h4>Editing Form for Student :<%= user.name %> </h4>
+<form method="POST" class="addStu" autocomplete="off">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Name : </label>
+      <input type="text" name="name" required class="form-control" value="<%= user.name  %> " id="exampleInputEmail1">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Roll No. : </label>
+        <input type="text" name="roll" min="1" value="<%= user.roll  %> " required class="form-control"  >
+      </div>     
+     
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Date of Birth : </label>
+        <input type="datetime" name="dob" max="2022-12-31" value="<%= user.dob  %> " required class="form-control" >
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Score : </label>
+        <input type="text" name="score" max="100" min="0" value="<%= user.score  %> " required class="form-control">
+      </div>
+    <button type="submit" class="btn btn-success">Update</button>
+</form>
