@@ -19,14 +19,13 @@ jobs:
         with:
           node-version: '16.x'      
 
-      - name: Install npm packages - server
+      - name: Install npm packages
         run: |
-          cd NodeAssign
           npm install       
       
       - name: Install npm packages, build then copy files - client
         run: |
-          cd NodeAssign
+          npm install
             
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
