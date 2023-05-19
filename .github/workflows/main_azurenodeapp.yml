@@ -21,21 +21,18 @@ jobs:
 
       - name: Install npm packages - server
         run: |
-          cd mern/server
+          cd NodeAssign
           npm install       
       
       - name: Install npm packages, build then copy files - client
         run: |
-          cd mern/client
-          npm install
-          npm run build
-          cp -r ./build ../server/public
+          cd NodeAssign
             
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
-          name: mern-app
-          path: mern/server
+          name: NodeAssign
+          path: NodeAssign
 
   deploy:
     runs-on: ubuntu-latest
@@ -48,7 +45,7 @@ jobs:
       - name: Download artifact from build job
         uses: actions/download-artifact@v2
         with:
-          name:  mern-app
+          name:  NodeAssign
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
